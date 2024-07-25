@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">monty_hall </span><span class="s0">import </span><span class="s1">MontyHallEnv</span>
+<span class="s0">from </span><span class="s1">value_iteration </span><span class="s0">import </span><span class="s1">ValueIterationAgent</span>
+<span class="s0">from </span><span class="s1">policy_iteration </span><span class="s0">import </span><span class="s1">PolicyIterationAgent</span>
+<span class="s0">from </span><span class="s1">monte_carlo_es </span><span class="s0">import </span><span class="s1">MonteCarloESAgent</span>
+<span class="s0">from </span><span class="s1">on_policy_first_visit_mc </span><span class="s0">import </span><span class="s1">OnPolicyFirstVisitMCAgent</span>
+<span class="s0">from </span><span class="s1">off_policy_mc </span><span class="s0">import </span><span class="s1">OffPolicyMCAgent</span>
+<span class="s0">from </span><span class="s1">dyna_q </span><span class="s0">import </span><span class="s1">DynaQAgent</span>
+
+<span class="s1">env = MontyHallEnv()</span>
+
+<span class="s2"># Value Iteration</span>
+<span class="s1">vi_agent = ValueIterationAgent(env)</span>
+<span class="s1">vi_agent.value_iteration()</span>
+<span class="s1">vi_policy = vi_agent.extract_policy()</span>
+<span class="s1">print(</span><span class="s3">&quot;Value Iteration Policy:&quot;</span><span class="s0">, </span><span class="s1">vi_policy)</span>
+
+<span class="s2"># Policy Iteration</span>
+<span class="s1">pi_agent = PolicyIterationAgent(env)</span>
+<span class="s1">pi_agent.policy_iteration()</span>
+<span class="s1">pi_policy = pi_agent.extract_policy()</span>
+<span class="s1">print(</span><span class="s3">&quot;Policy Iteration Policy:&quot;</span><span class="s0">, </span><span class="s1">pi_policy)</span>
+
+<span class="s2"># Monte Carlo ES</span>
+<span class="s1">mc_es_agent = MonteCarloESAgent(env)</span>
+<span class="s1">mc_es_agent.learn()</span>
+<span class="s1">mc_es_policy = mc_es_agent.extract_policy()</span>
+<span class="s1">print(</span><span class="s3">&quot;Monte Carlo ES Policy:&quot;</span><span class="s0">, </span><span class="s1">mc_es_policy)</span>
+
+<span class="s2"># On-policy First-visit MC</span>
+<span class="s1">on_policy_mc_agent = OnPolicyFirstVisitMCAgent(env)</span>
+<span class="s1">on_policy_mc_agent.learn()</span>
+<span class="s1">on_policy_mc_policy = on_policy_mc_agent.extract_policy()</span>
+<span class="s1">print(</span><span class="s3">&quot;On-policy First Visit MC Policy:&quot;</span><span class="s0">, </span><span class="s1">on_policy_mc_policy)</span>
+
+<span class="s2"># Off-policy MC</span>
+<span class="s1">off_policy_mc_agent = OffPolicyMCAgent(env)</span>
+<span class="s1">off_policy_mc_agent.learn()</span>
+<span class="s1">off_policy_mc_policy = off_policy_mc_agent.extract_policy()</span>
+<span class="s1">print(</span><span class="s3">&quot;Off-policy MC Policy:&quot;</span><span class="s0">, </span><span class="s1">off_policy_mc_policy)</span>
+
+<span class="s2"># Dyna-Q</span>
+<span class="s1">dyna_q_agent = DynaQAgent(env)</span>
+<span class="s1">dyna_q_agent.learn()</span>
+<span class="s1">dyna_q_policy = dyna_q_agent.extract_policy()</span>
+<span class="s1">print(</span><span class="s3">&quot;Dyna-Q Policy:&quot;</span><span class="s0">, </span><span class="s1">dyna_q_policy)</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "08715a20",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print('PyDev console: using IPython 8.18.1\\n')\n",
+    "\n",
+    "import sys; print('Python %s on %s' % (sys.version, sys.platform))\n",
+    "sys.path.extend(['C:\\\\Users\\\\DELL\\\\PycharmProjects\\\\DeepLearningR'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "f5784718",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "jupyter"
+   ]
+  }
+ ],
+ "metadata": {},
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
